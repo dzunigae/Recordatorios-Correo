@@ -3,8 +3,8 @@ import pandas as pd
 ADMINISTRADORES = './Nuevas Convocatorias/assets/Administradores PoP.xlsx'
 NUEVAS_CONVOCATORIAS = './Nuevas Convocatorias/assets/Hoja de Nuevas Convocatorias.xlsx'
 YA_RESPONDIDAS = './Nuevas Convocatorias/assets/Ya respondidas.xlsx'
-YA_RESPONDIDAS_OUT = './Nuevas Convocatorias/out/Ya respondidas out.xlsx'
 
+YA_RESPONDIDAS_OUT = './Nuevas Convocatorias/out/Ya respondidas out.xlsx'
 REPORTE = './Nuevas Convocatorias/out/reporte.xlsx'
 
 def reporte_correos_convocatorias(ADMINISTRADORES,NUEVAS_CONVOCATORIAS,YA_RESPONDIDAS,REPORTE,YA_RESPONDIDAS_OUT):
