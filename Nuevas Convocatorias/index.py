@@ -75,7 +75,6 @@ def reporte_correos_convocatorias(ADMINISTRADORES,NUEVAS_CONVOCATORIAS,YA_RESPON
 
     REPORTE_DF = REPORTE_DF.drop(LISTA_INDICES_ELIMINAR)
 
-    #print(YA_RESPONDIDAS_DF)
     REPORTE_DF.to_excel(REPORTE, index=False)
     YA_RESPONDIDAS_DF.to_excel(YA_RESPONDIDAS_OUT, index=False)
 
