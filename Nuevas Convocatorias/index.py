@@ -41,7 +41,7 @@ def reporte_correos_convocatorias(ADMINISTRADORES,NUEVAS_CONVOCATORIAS,YA_RESPON
     HOJA_NUEVAS_CONVOCATORIAS_DF = HOJA_NUEVAS_CONVOCATORIAS_DF[['index','Dirección de correo electrónico','Nombre de la entidad','Título de la convocatoria','Programas académicos requeridos','Decisión de aprobación o rechazo']].copy()
     
     #Crear el Data Frame que sirve de soporte
-    REPORTE_DF = pd.DataFrame(columns=['index','Programa Académico','Administrador PoP','Dirección de correo electrónico','Nombre de la entidad','Título de la convocatoria','Decisión de aprobación o rechazo'])
+    REPORTE_DF = pd.DataFrame(columns=['index','Programa Académico','Administrador PoP'])
 
     #Rellenar el Data Frame del reporte con todas las convocatorias aún pendientes por respuesta
     for i in HOJA_NUEVAS_CONVOCATORIAS_DF.index:
