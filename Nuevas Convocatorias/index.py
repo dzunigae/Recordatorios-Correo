@@ -54,6 +54,7 @@ def reporte_correos_convocatorias(ADMINISTRADORES,NUEVAS_CONVOCATORIAS,YA_RESPON
                 'index': SELECCIONADO['index'],
                 'Programa Académico': j,
                 'Administrador PoP': ADMINISTRADOR['EMAIL'].iloc[0],
+                'Fecha de inicio':SELECCIONADO['Fecha de inicio de actividades'],
                 #'Dirección de correo electrónico': SELECCIONADO['Dirección de correo electrónico'],
                 #'Nombre de la entidad': SELECCIONADO['Nombre de la entidad'],
                 #'Título de la convocatoria': SELECCIONADO['Título de la convocatoria'],
