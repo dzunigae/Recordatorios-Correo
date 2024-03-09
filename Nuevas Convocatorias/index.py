@@ -38,7 +38,7 @@ def reporte_correos_convocatorias(ADMINISTRADORES,NUEVAS_CONVOCATORIAS,YA_RESPON
     YA_RESPONDIDAS_DF = YA_RESPONDIDAS_DF[~YA_RESPONDIDAS_DF['Convocatoria'].isin(CONVOCATORIAS_YA_RESPONDIDAS)]
 
     #Filtrar únicamente las columnas de la Hoja de nuevas Convocatorias que nos sirven
-    HOJA_NUEVAS_CONVOCATORIAS_DF = HOJA_NUEVAS_CONVOCATORIAS_DF[['index','Dirección de correo electrónico','Nombre de la entidad','Título de la convocatoria','Programas académicos requeridos','Decisión de aprobación o rechazo']].copy()
+    HOJA_NUEVAS_CONVOCATORIAS_DF = HOJA_NUEVAS_CONVOCATORIAS_DF[['index','Dirección de correo electrónico','Programas académicos requeridos','Fecha de inicio de actividades']].copy()
     
     #Crear el Data Frame que sirve de soporte
     REPORTE_DF = pd.DataFrame(columns=['index','Programa Académico','Administrador PoP'])
@@ -55,10 +55,6 @@ def reporte_correos_convocatorias(ADMINISTRADORES,NUEVAS_CONVOCATORIAS,YA_RESPON
                 'Programa Académico': j,
                 'Administrador PoP': ADMINISTRADOR['EMAIL'].iloc[0],
                 'Fecha de inicio':SELECCIONADO['Fecha de inicio de actividades'],
-                #'Dirección de correo electrónico': SELECCIONADO['Dirección de correo electrónico'],
-                #'Nombre de la entidad': SELECCIONADO['Nombre de la entidad'],
-                #'Título de la convocatoria': SELECCIONADO['Título de la convocatoria'],
-                #'Decisión de aprobación o rechazo': SELECCIONADO['Decisión de aprobación o rechazo']
             },ignore_index=True)
 
     #Eliminar del Data Frame de reporte aquellas convocatorias que ya han sido respondidas
