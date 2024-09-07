@@ -38,7 +38,7 @@ def reporte_correos_convocatorias(ADMINISTRADORES,NUEVAS_CONVOCATORIAS,YA_RESPON
     YA_RESPONDIDAS_DF = YA_RESPONDIDAS_DF[~YA_RESPONDIDAS_DF['Convocatoria'].isin(CONVOCATORIAS_YA_RESPONDIDAS)]
 
     #Filtrar únicamente las columnas de la Hoja de nuevas Convocatorias que nos sirven
-    HOJA_NUEVAS_CONVOCATORIAS_DF = HOJA_NUEVAS_CONVOCATORIAS_DF[['index','Dirección de correo electrónico','Programas académicos requeridos','Fecha de inicio de actividades']].copy()
+    HOJA_NUEVAS_CONVOCATORIAS_DF = HOJA_NUEVAS_CONVOCATORIAS_DF[['index','3. Correo electrónico','4. Programas académicos requeridos','14. Fecha de inicio de actividades']].copy()
     
     #Crear el Data Frame que sirve de soporte
     REPORTE_DF = pd.DataFrame(columns=['index','Programa Académico','Administrador PoP'])
@@ -46,7 +46,7 @@ def reporte_correos_convocatorias(ADMINISTRADORES,NUEVAS_CONVOCATORIAS,YA_RESPON
     #Rellenar el Data Frame del reporte con todas las convocatorias aún pendientes por respuesta
     for i in HOJA_NUEVAS_CONVOCATORIAS_DF.index:
         SELECCIONADO = HOJA_NUEVAS_CONVOCATORIAS_DF.loc[i]
-        PROGRAMAS = SELECCIONADO['Programas académicos requeridos']
+        PROGRAMAS = SELECCIONADO['4. Programas académicos requeridos']
         LISTA_PROGRAMAS = PROGRAMAS.split(', ')
         for j in LISTA_PROGRAMAS:
             ADMINISTRADOR = ADMINISTRADORES_DF.loc[ADMINISTRADORES_DF['NAME'] == j]
@@ -54,7 +54,7 @@ def reporte_correos_convocatorias(ADMINISTRADORES,NUEVAS_CONVOCATORIAS,YA_RESPON
                 'index': SELECCIONADO['index'],
                 'Programa Académico': j,
                 'Administrador PoP': ADMINISTRADOR['EMAIL'].iloc[0],
-                'Fecha de inicio':SELECCIONADO['Fecha de inicio de actividades'],
+                'Fecha de inicio':SELECCIONADO['14. Fecha de inicio de actividades'],
             },ignore_index=True)
 
     #Eliminar del Data Frame de reporte aquellas convocatorias que ya han sido respondidas
